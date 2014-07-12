@@ -1,0 +1,14 @@
+用UserId还是SessionId作为key呢？
+
+redis
+key:userid  field value
+设置key的过期时间
+采用hash算法自动分片， 均衡分布到多台redis服务器
+
+couchbase(memcached)，采用couchbase模式
+key:userid; value:expire, keys
+key:userid + field, value
+
+数据网格：hazlecast, gridgain, ehcache, infinispan
+
+文档：mongodb不适合

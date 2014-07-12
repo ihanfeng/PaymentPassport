@@ -1,0 +1,14 @@
+jquery
+bootstrap
+
+springmvc
+spring
+mybatis
+shiro(spring security)
+
+druid
+tddl
+
+mysql
+
+log框架

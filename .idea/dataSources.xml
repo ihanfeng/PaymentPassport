@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="4126407296">
+    <data-source source="LOCAL" name="defaultPersistenceUnit" uuid="5adfcd39-8b0d-4848-a241-079b74886459">
+      <driver-ref>hsqldb.remote</driver-ref>
+      <jdbc-driver>org.hsqldb.jdbcDriver</jdbc-driver>
+      <jdbc-url>jdbc:hsqldb:mem:spring</jdbc-url>
+      <user-name>sa</user-name>
+      <libraries>
+        <library>
+          <url>file://D:\maven\repository\org\hsqldb\hsqldb\2.2.9\hsqldb-2.2.9.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+    <data-source source="LOCAL" name="Oracle - @localhost" uuid="cc6941d7-807c-4a75-8ffd-2dc88fb91cc8">
+      <driver-ref>oracle</driver-ref>
+      <jdbc-driver>oracle.jdbc.OracleDriver</jdbc-driver>
+      <jdbc-url>jdbc:oracle:thin:@//localhost:1521</jdbc-url>
+      <libraries />
+    </data-source>
+    <data-source source="LOCAL" name="MySQL - sampledb@localhost" uuid="7eb83c06-8a90-4cc2-a0c0-8f9deead2d50">
+      <driver-ref>mysql</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3307/sampledb</jdbc-url>
+      <user-name>root</user-name>
+      <user-password>dfdadfcbdfd9dfd9dfdddfc5dfd8dfce</user-password>
+      <schema-pattern>sampledb.*</schema-pattern>
+      <default-schemas>sampledb.*</default-schemas>
+      <driver-properties>
+        <property name="zeroDateTimeBehavior" value="convertToNull" />
+        <property name="tinyInt1isBit" value="false" />
+      </driver-properties>
+      <libraries />
+    </data-source>
+  </component>
+</project>
+

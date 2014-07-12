@@ -1,0 +1,11 @@
+方案1：JSON
+
+方案2：kryo
+要考虑集合类型的处理
+http://zhangyongbo.iteye.com/blog/1913934
+
+方案3：msgpack
+
+方案4： protobuf和thrif
+不是很好，需要先定义
+
