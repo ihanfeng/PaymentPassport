@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  */
 public class Account {
     private long accountId;
-    private String accountName;
+    private String Name;
     private BigDecimal available;
 
     public long getAccountId() {
@@ -18,12 +18,12 @@ public class Account {
         this.accountId = accountId;
     }
 
-    public String getAccountName() {
-        return accountName;
+    public String getName() {
+        return Name;
     }
 
-    public void setAccountName(String accountName) {
-        this.accountName = accountName;
+    public void setName(String name) {
+        Name = name;
     }
 
     public BigDecimal getAvailable() {

@@ -1,7 +1,7 @@
 <component name="ArtifactManager">
   <artifact type="war" build-on-make="true" name="Passport:war">
     <output-path>$PROJECT_DIR$/target</output-path>
-    <root id="archive" name="WebDev.war">
+    <root id="archive" name="PaymentPassport.war">
       <element id="artifact" artifact-name="Passport:war exploded" />
     </root>
   </artifact>

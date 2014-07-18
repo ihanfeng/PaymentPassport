@@ -1,7 +1,9 @@
 package com.cssweb.idm.service;
 
 
-import com.cssweb.idm.domain.User;
+
+import com.cssweb.payment.account.AccountService;
+import com.cssweb.payment.account.domain.User;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -14,11 +16,11 @@ import java.util.List;
  * Created by chenhf on 2014/7/9.
  */
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration("classpath:spring-mybatis.xml")
+@ContextConfiguration("classpath:spring-paymentclient.xml")
 public class UserServiceTest {
     @Autowired
-    private UserService userService;
-
+    private AccountService accountService;
+/*
     @Test
     public void create()
     {
@@ -31,7 +33,7 @@ public class UserServiceTest {
         user.setRealName("陈海峰");
 
 
-        int ret = userService.create(user);
+        int ret = accountService.create(user);
         System.out.println("ret = " + ret);
 
     }
@@ -105,4 +107,5 @@ public class UserServiceTest {
             }
         }
     }
+    */
 }

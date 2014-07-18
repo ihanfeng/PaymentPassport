@@ -1,8 +1,10 @@
 package com.cssweb.shiro.realm;
 
 
-import com.cssweb.idm.domain.User;
-import com.cssweb.idm.service.UserService;
+
+import com.cssweb.payment.account.AccountService;
+import com.cssweb.payment.account.CsswebException;
+import com.cssweb.payment.account.domain.User;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.AuthorizationInfo;
 import org.apache.shiro.authz.SimpleAuthorizationInfo;
@@ -19,7 +21,7 @@ import java.util.List;
 public class MyRealm extends AuthorizingRealm {
 
     @Autowired
-    private UserService userService;
+    private AccountService accountService;
 
 
 
@@ -65,7 +67,14 @@ public class MyRealm extends AuthorizingRealm {
         UsernamePasswordToken token = (UsernamePasswordToken) authenticationToken;
 
         //查出是否有此用户
-        User user = userService.login(token.getUsername(), "chf888");
+        User user = null;
+        try {
+            user = accountService.login(token.getUsername(), "chf888", "");
+            user.setUserName("chenhf");
+            user.setPassword("chf888");
+        } catch (CsswebException e) {
+            e.printStackTrace();
+        }
 
         if (user != null)
         {

@@ -1,9 +1,14 @@
 package com.cssweb.distributedsession;
 
 import com.couchbase.client.CouchbaseClient;
+import com.esotericsoftware.kryo.Kryo;
+import com.esotericsoftware.kryo.io.Input;
+import com.esotericsoftware.kryo.io.Output;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.math.BigDecimal;
 import java.net.URI;
 import java.util.ArrayList;
@@ -20,9 +25,24 @@ public class SessionCouchBaseImpl extends AbstractCsswebSession implements Csswe
     private String password;
     private CouchbaseClient client;
 
+    public static class AccCol
+    {
+        private List<Account> accountList;
 
+        public AccCol(List<Account> accountList)
+        {
+            this.accountList = accountList;
+        }
+
+        public List<Account> get()
+        {
+            return accountList;
+        }
+    };
     public static void main(String[] args) throws Exception {
 
+
+        /*
         // (Subset) of nodes in the cluster to establish a connection
         List<URI> hosts = Arrays.asList(
                 new URI("http://192.168.1.201:8091/pools"),
@@ -87,6 +107,7 @@ public class SessionCouchBaseImpl extends AbstractCsswebSession implements Csswe
 
         // Shutting down properly
         client.shutdown();
+        */
     }
 
     @Override

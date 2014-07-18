@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:jpa="http://www.springframework.org/schema/data/jpa" xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:mvc="http://www.springframework.org/schema/mvc" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/data/jpa http://www.springframework.org/schema/data/jpa/spring-jpa.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <!-- 扫描类包，将标注Spring注解的类自动转化Bean，同时完成Bean的注入 -->
+    <context:component-scan base-package="com.cssweb.network"/>
+
+
+
+    <context:component-scan base-package="com.cssweb.payment.account"/>
+    <context:component-scan base-package="com.cssweb.payment.trade"/>
+
+
+    <bean id="networkService" class="com.cssweb.network.NetworkService">
+        <property name="paymentServer" value="127.0.0.1:6000" />
+    </bean>
+
+    <bean id="accountService" class="com.cssweb.payment.account.AccountServiceImpl">
+        <property name="networkService" ref="networkService"/>
+    </bean>
+    <bean id="tradeService" class="com.cssweb.payment.trade.TradeServiceImpl">
+        <property name="networkService" ref="networkService"/>
+    </bean>
+
+</beans>
